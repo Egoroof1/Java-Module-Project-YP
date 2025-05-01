@@ -1,6 +1,17 @@
+import java.util.Scanner;
+
+import game.Car;
+import game.GameRace;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Scanner sc = new Scanner(System.in);
+
+        GameRace.welcome();
+
+        GameRace.preparation(sc);
+
+        GameRace.start();
+
     }
 }
