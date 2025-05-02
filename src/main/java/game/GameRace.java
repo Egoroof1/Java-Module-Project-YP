@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameRace {
-    public static final String nameGame = "24 часа Ле-Мана";
-    public static ArrayList<Car> cars = new ArrayList<Car>();
+    public final static String nameGame = "24 часа Ле-Мана";
+    public static ArrayList<Car> cars = new ArrayList<>();
 
 
     public static void start(){
@@ -16,6 +16,7 @@ public class GameRace {
         }
         for (int i = 1; i <= 24; i++) {
             try {
+                winner.move(winner.speed);
                 Thread.sleep(300);
                 System.out.println("Прошло "+i+"/24 часть гонки");
             } catch (InterruptedException e) {
@@ -26,7 +27,7 @@ public class GameRace {
         System.out.println("Финиш\n");
         System.out.println("------------------------------------------------------");
 
-        System.out.println(String.format("Победил %s, проехав %d километров за 24 часа.", winner.nameCar, winner.speed * 24));
+        System.out.println(String.format("Победил %s, проехав %d километров за 24 часа.", winner.nameCar, winner.getMileage()));
     }
 
     public static void preparation(Scanner sc){
